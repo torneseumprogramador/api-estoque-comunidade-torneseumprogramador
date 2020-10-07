@@ -9,8 +9,8 @@ import helmet from 'helmet';
 import log from '@shared/utils/log';
 import AppError from '@shared/errors/AppError';
 import { errors } from 'celebrate';
+import cors from 'cors';
 import routes from './routes';
-
 import createConnection from '../typeorm/index';
 import rateLimiter from './middlewares/rateLimiterRedis';
 import '@shared/container';
@@ -18,6 +18,7 @@ import '@shared/container';
 createConnection();
 
 const app = express();
+app.use(cors());
 app.use(helmet());
 app.use(rateLimiter);
 app.use(

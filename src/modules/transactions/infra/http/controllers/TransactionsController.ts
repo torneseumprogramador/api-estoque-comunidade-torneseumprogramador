@@ -53,7 +53,7 @@ class TransactionsController {
       id: request.params.id,
       user: id,
     });
-    return response.json(transaction);
+    return response.status(204).json(transaction);
   }
 
   async destroy(request: Request, response: Response): Promise<Response> {

@@ -35,7 +35,7 @@ transactionsRouter.put(
     },
     [Segments.BODY]: {
       title: Joi.string().required(),
-      value: Joi.number(),
+      alue: Joi.number(),
       category: Joi.string().required(),
       type: Joi.string().valid('income', 'outcome'),
     },
