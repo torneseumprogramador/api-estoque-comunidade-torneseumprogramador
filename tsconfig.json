@@ -9,13 +9,17 @@
     "baseUrl": "./",
     "allowJs": true,
     "paths": {
-      "@modules/*": ["src/modules/*"],
+      "@controllers/*": ["src/controllers/*"],
       "@config/*": ["src/config/*"],
-      "@shared/*": ["src/shared/*"]
+      "@models/*": ["src/models/*"],
+      "@errors/*": ["src/errors/*"],
+      "@database/*": ["src/database/*"],
+      "@router/*": ["src/router/*"]
     },
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   }
 }
