@@ -21,6 +21,7 @@ yarn typeorm migration:run # or npm run typeorm migration:run
 ```sh
 yarn start # or npm start
 ```
+This app is running on http://localhost:3333
 ---
 ## Routes
 ---
