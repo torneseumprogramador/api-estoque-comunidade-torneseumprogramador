@@ -1,6 +1,5 @@
 import AppError from '@errors/AppError';
 import { Request, Response } from 'express';
-import log from 'src/logger';
 import { getCustomRepository } from 'typeorm';
 import TransactionsRepository from '../repository/TransactionsRepository';
 
@@ -59,7 +58,7 @@ export default class TransactionsController {
         total + transaction.value < value) ||
       (type === 'income' &&
         transaction.type === 'income' &&
-        total - transaction.value > value)
+        total - transaction.value < value)
     ) {
       throw new AppError('You do not have enough balance');
     }

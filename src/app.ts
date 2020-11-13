@@ -1,10 +1,11 @@
+import 'reflect-metadata';
 import { errors } from 'celebrate';
 import express, { NextFunction, Request, Response } from 'express';
+import 'express-async-errors';
 import helmet from 'helmet';
 import PinoHttp from 'pino-http';
 import cors from 'cors';
 import AppError from './errors/AppError';
-import log from './logger';
 import router from './router';
 import createConnection from './database/index';
 import rateLimiter from './middlewares/rateLimiter';
@@ -32,7 +33,7 @@ app.use(
       });
     }
 
-    log.error(err.message);
+    console.error(err.message);
 
     return response.status(500).json({
       status: 'error',
